@@ -10,7 +10,7 @@ import numpy as np
 app = Flask(__name__)
 # Load the trained model for prediction
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = torch.load("model_0.pt", map_location=device)
+model = torch.jit.load('model_0.pt', map_location=device)
 model.eval()
 
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
