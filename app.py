@@ -15,14 +15,14 @@ model.eval()
 
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
-# Define the transformation for input images
+# Transformation defination for input images
 weights = models.EfficientNet_B1_Weights.DEFAULT
 transform = transforms.Compose([
     transforms.Resize(size=(32, 32)),
     weights.transforms()
 ])
 
-# Define the transformation to replicate the given configuration
+# Transformation to replicate the configuration
 # transform = transforms.Compose([
 #     transforms.Resize(size=(32, 32), interpolation=2),  # Bilinear interpolation is equivalent to value 2
 #     transforms.CenterCrop(size=240),  # Center crop to size 240
@@ -62,3 +62,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
